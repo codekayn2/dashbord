@@ -6,6 +6,7 @@ import New from "./pages/new/New";
 import Single from "./pages/single/Single";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import {userInputs} from "./formData"
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,16 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/customers/",
+    path: "/users",
     element: <Customers />,
+  },
+  {
+    path: "/users/:usersId",
+    element: <Single />,
+  },
+  {
+    path: "/users/:usersId/new",
+    element: <New inputs={userInputs} title="Add new user"/>,
   },
   {
     path: "/products",
@@ -23,14 +32,6 @@ const router = createBrowserRouter([
   {
     path: "/products/:productId/new",
     element: <New />,
-  },
-  {
-    path: "/customers/:customerId/new",
-    element: <New />,
-  },
-  {
-    path: "/customers/:customerId",
-    element: <Single />,
   },
   {
     path: "/products/:productId",
